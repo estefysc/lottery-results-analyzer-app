@@ -3,9 +3,10 @@
 // const Parser = require('./Parser');
 
 import express from "express";
-import getSetOFSix from "./Index.js";
+import getSetOFSix from "./index.js";
 import Console from "console";
-import createJsonFile from "./Parser.js";
+import {createJsonFile} from "./parser.js";
+import {evenAndOddCalculator, evenAndOddPercentageCalculator} from "./calculations.js";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(function(req, res, next) {
 
 app.get("/", function(req, res){
     res.send(getSetOFSix());
+    evenAndOddCalculator();
+    evenAndOddPercentageCalculator();
 });
 
 app.listen(port, function() {
@@ -29,5 +32,3 @@ app.listen(port, function() {
     Console.log("Creating JSON file...");
     createJsonFile();
 });
-
-// execute a function imported from another file

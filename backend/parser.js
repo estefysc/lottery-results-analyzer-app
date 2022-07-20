@@ -99,6 +99,6 @@ function createJsonFile() {
     return resultArrayJson;
 }
 
-export default createJsonFile;
+export {createJsonFile, resultsArray};
 
 
