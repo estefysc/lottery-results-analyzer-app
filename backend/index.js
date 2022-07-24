@@ -1,10 +1,10 @@
-import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+// Brings in the ability to create the 'require' method.
+import { createRequire } from "module";
 
-const require = createRequire(import.meta.url); // construct the require method
+const require = createRequire(import.meta.url);
 const data = require("./data.json");
 
-// let data = [1, 2, 3, 4, 5, 6];
-
+// Obtains a set of six numbers randomly, which are the result of one lottery play, from the data.json file.
 let getSetOFSix = () => {
     return {
         setOfSix: data[Math.floor(Math.random() * data.length)]

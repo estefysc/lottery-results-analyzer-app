@@ -1,8 +1,5 @@
-import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 import {resultsArray} from "./parser.js";
 
-// const require = createRequire(import.meta.url); // construct the require method
-// const data = require("./data.json");
 const numbersInOnePlay = 6;
 
 let globalTotalEvenNumbers = 0;
@@ -29,16 +26,18 @@ let fourOddInSet = 0;
 let fiveOddInSet = 0;
 let sixOddInSet = 0;
 
+// This function is used to calculate the amount of times even and odd numbers appear.
 function evenAndOddCalculator() {
     let totalEvenNumbers = 0;
     let totalOddNumbers = 0;
 
+    // todo: Can this be more efficient using a hashmap or its equivalent in JavaScript?
     for(let i = 0; i < resultsArray.length; ++i) {
         let evenCounter = 0;
         let oddCounter = 0;
 
-
         for(let j = 0; j < numbersInOnePlay; ++j) {
+            // Checks if the number is even.
             if(resultsArray[i][j] % 2 === 0) {
                 ++evenCounter;
                 ++totalEvenNumbers;
@@ -100,19 +99,21 @@ function evenAndOddCalculator() {
                     ++zeroOddInSet;
                     break;
             }
-        }
+        } // End of j-variable for loop. Checks each numbers in each set of six, one play.
+
         console.log();
         console.log(`For this result: ${resultsArray[i]}`);
         console.log(`even = ${evenCounter}`);
         console.log(`odd = ${oddCounter}`);
-    }
+    } // End of i-variable for loop. Checks each set of six.
+
     globalTotalEvenNumbers = totalEvenNumbers;
     globalTotalOddNumbers = totalOddNumbers;
 
     console.log();
     console.log(`greatest amount of even numbers per set = ${largestAmountEven}`);
     console.log(`greatest amount of odd numbers per set = ${largestAmountOdd}`);
-}
+} // End of evenAndOddCalculator function.
 
 function evenAndOddPercentageCalculator() {
     let amountOfSets = resultsArray.length;

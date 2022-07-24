@@ -21,12 +21,14 @@ app.use(function(req, res, next) {
     next();
 });
 
+// Currently being used to test the backend.
 app.get("/", function(req, res){
     res.send(getSetOFSix());
     evenAndOddCalculator();
     evenAndOddPercentageCalculator();
 });
 
+// Connects to the lottery website and parses the data when the server is started.
 app.listen(port, function() {
     console.log("Server started successfully");
     Console.log("Creating JSON file...");
