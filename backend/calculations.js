@@ -1,14 +1,10 @@
 import {resultsArray} from "./parser.js";
 
+// If global variables are not used, then functions will execute more than one job.
 const numbersInOnePlay = 6;
 
 let globalTotalEvenNumbers = 0;
 let globalTotalOddNumbers = 0;
-
-// let largestAmountEven = 0;
-// let largestAmountOdd = 0;
-// let averageEven = 0;
-// let averageOdd = 0;
 
 let globalZeroEvenInSet = 0;
 let globalOneEvenInSet = 0;
@@ -18,29 +14,13 @@ let globalFourEvenInSet = 0;
 let globalFiveEvenInSet = 0;
 let globalSixEvenInSet = 0;
 
-// let zeroOddInSet = 0;
-// let oneOddInSet = 0;
-// let twoOddInSet = 0;
-// let threeOddInSet = 0;
-// let fourOddInSet = 0;
-// let fiveOddInSet = 0;
-// let sixOddInSet = 0;
-
-let globalZeroOddInSet = 0;
-let globalOneOddInSet = 0;
-let globalTwoOddInSet = 0;
-let globalThreeOddInSet = 0;
-let globalFourOddInSet = 0;
-let globalFiveOddInSet = 0;
-let globalSixOddInSet = 0;
-
 // This function is used to calculate the amount of times even and odd numbers appear.
 function evenAndOddCalculator() {
     let totalEvenNumbers = 0;
     let totalOddNumbers = 0;
 
-    let largestAmountEven = 0;
-    let largestAmountOdd = 0;
+    // let largestAmountEven = 0;
+    // let largestAmountOdd = 0;
 
     let zeroEvenInSet = 0;
     let oneEvenInSet = 0;
@@ -49,14 +29,6 @@ function evenAndOddCalculator() {
     let fourEvenInSet = 0;
     let fiveEvenInSet = 0;
     let sixEvenInSet = 0;
-
-    let zeroOddInSet = 0;
-    let oneOddInSet = 0;
-    let twoOddInSet = 0;
-    let threeOddInSet = 0;
-    let fourOddInSet = 0;
-    let fiveOddInSet = 0;
-    let sixOddInSet = 0;
 
     // todo: Can this be more efficient using a hashmap or its equivalent in JavaScript?
     for(let i = 0; i < resultsArray.length; ++i) {
@@ -73,12 +45,13 @@ function evenAndOddCalculator() {
                 ++totalOddNumbers;
             }
 
-            if(evenCounter >= largestAmountEven) {
-                largestAmountEven = evenCounter;
-            }
-            if(oddCounter >= largestAmountOdd) {
-                largestAmountOdd = oddCounter;
-            }
+            // Is this information really necessary?
+            // if(evenCounter >= largestAmountEven) {
+            //     largestAmountEven = evenCounter;
+            // }
+            // if(oddCounter >= largestAmountOdd) {
+            //     largestAmountOdd = oddCounter;
+            // }
         } // End of j-variable for loop. Checks each numbers in each set of six, one play.
 
         // These switch statements are used to count the amount of sets with zero even, zero odd, one even, one odd, etc.
@@ -105,29 +78,6 @@ function evenAndOddCalculator() {
                 ++zeroEvenInSet;
                 break;
         }
-        switch (oddCounter) {
-            case 1:
-                ++oneOddInSet;
-                break;
-            case 2:
-                ++twoOddInSet;
-                break;
-            case 3:
-                ++threeOddInSet;
-                break;
-            case 4:
-                ++fourOddInSet;
-                break;
-            case 5:
-                ++fiveOddInSet;
-                break;
-            case 6:
-                ++sixOddInSet;
-                break;
-            default:
-                ++zeroOddInSet;
-                break;
-        }
 
         console.log();
         console.log(`For this result: ${resultsArray[i]}`);
@@ -148,19 +98,12 @@ function evenAndOddCalculator() {
     globalFiveEvenInSet = fiveEvenInSet;
     globalSixEvenInSet = sixEvenInSet;
 
-    globalZeroOddInSet = zeroOddInSet;
-    globalOneOddInSet = oneOddInSet;
-    globalTwoOddInSet = twoOddInSet;
-    globalThreeOddInSet = threeOddInSet;
-    globalFourOddInSet = fourOddInSet;
-    globalFiveOddInSet = fiveOddInSet;
-    globalSixOddInSet = sixOddInSet;
-
-    console.log();
-    console.log(`greatest amount of even numbers per set = ${largestAmountEven}`);
-    console.log(`greatest amount of odd numbers per set = ${largestAmountOdd}`);
+    // console.log();
+    // console.log(`greatest amount of even numbers per set = ${largestAmountEven}`);
+    // console.log(`greatest amount of odd numbers per set = ${largestAmountOdd}`);
 } // End of evenAndOddCalculator function.
 
+// Needs to be run after evenAndOddCalculator()
 function evenAndOddPercentageCalculator() {
     let amountOfSets = resultsArray.length;
 
@@ -175,14 +118,6 @@ function evenAndOddPercentageCalculator() {
     let percentFiveEven = (globalFiveEvenInSet * 100.00) / amountOfSets;
     let percentSixEven = (globalSixEvenInSet * 100.00) / amountOfSets;
 
-    let percentZeroOdd = (globalZeroOddInSet * 100.00) / amountOfSets;
-    let percentOneOdd = (globalOneOddInSet * 100.00) / amountOfSets;
-    let percentTwoOdd = (globalTwoOddInSet * 100.00) / amountOfSets;
-    let percentThreeOdd = (globalThreeOddInSet * 100.00) / amountOfSets;
-    let percentFourOdd = (globalFourOddInSet * 100.00) / amountOfSets;
-    let percentFiveOdd = (globalFiveOddInSet * 100.00) / amountOfSets;
-    let percentSixOdd = (globalSixOddInSet * 100.00) / amountOfSets;
-
     console.log();
     console.log(`Total sets = ${amountOfSets}`);
     console.log(`Total even numbers = ${globalTotalEvenNumbers}`);
@@ -190,23 +125,24 @@ function evenAndOddPercentageCalculator() {
     console.log();
     console.log(`Average amount of even numbers per set = ${averageEven}`);
     console.log(`Average amount of odd numbers per set = ${averageOdd}`);
-
     console.log();
-    console.log(`The amount of sets with zero even numbers is ${globalZeroEvenInSet}, a percentage of ${percentZeroEven}%`);
-    console.log(`The amount of sets with one even numbers is ${globalOneEvenInSet}, a percentage of ${percentOneEven}%`);
-    console.log(`The amount of sets with two even numbers is ${globalTwoEvenInSet}, a percentage of ${percentTwoEven}%`);
-    console.log(`The amount of sets with three even numbers is ${globalThreeEvenInSet}, a percentage of ${percentThreeEven}%`);
-    console.log(`The amount of sets with four even numbers is ${globalFourEvenInSet}, a percentage of ${percentFourEven}%`);
-    console.log(`The amount of sets with five even numbers is ${globalFiveEvenInSet}, a percentage of ${percentFiveEven}%`);
-    console.log(`The amount of sets with six even numbers is ${globalSixEvenInSet}, a percentage of ${percentSixEven}%`);
+    console.log(`The amount of sets with zero even numbers or six odd numbers is ${globalZeroEvenInSet}, a percentage of ${percentZeroEven}%`);
+    console.log(`The amount of sets with one even numbers or five odd numbers is ${globalOneEvenInSet}, a percentage of ${percentOneEven}%`);
+    console.log(`The amount of sets with two even numbers or four odd numbers is ${globalTwoEvenInSet}, a percentage of ${percentTwoEven}%`);
+    console.log(`The amount of sets with three even numbers or three odd numbers is ${globalThreeEvenInSet}, a percentage of ${percentThreeEven}%`);
+    console.log(`The amount of sets with four even numbers or two odd numbers is ${globalFourEvenInSet}, a percentage of ${percentFourEven}%`);
+    console.log(`The amount of sets with five even numbers or one odd numbers is ${globalFiveEvenInSet}, a percentage of ${percentFiveEven}%`);
+    console.log(`The amount of sets with six even numbers or zero odd numbers is ${globalSixEvenInSet}, a percentage of ${percentSixEven}%`);
     console.log();
-    console.log(`The amount of sets with zero odd numbers is ${globalZeroOddInSet}, a percentage of ${percentZeroOdd}%`);
-    console.log(`The amount of sets with one odd numbers is ${globalOneOddInSet}, a percentage of ${percentOneOdd}%`);
-    console.log(`The amount of sets with two odd numbers is ${globalTwoOddInSet}, a percentage of ${percentTwoOdd}%`);
-    console.log(`The amount of sets with three odd numbers is ${globalThreeOddInSet}, a percentage of ${percentThreeOdd}%`);
-    console.log(`The amount of sets with four odd numbers is ${globalFourOddInSet}, a percentage of ${percentFourOdd}%`);
-    console.log(`The amount of sets with five odd numbers is ${globalFiveOddInSet}, a percentage of ${percentFiveOdd}%`);
-    console.log(`The amount of sets with six odd numbers is ${globalSixOddInSet}, a percentage of ${percentSixOdd}%`);
 } // End of evenAndOddPercentageCalculator function.
+
+// Function to check which is the six most repeated numbers in the set.
+
+// Use a hashTable - key is the number, value is the amount of times it appears in the set.
+// function mostRepeatedNumbers() {
+//
+//
+// }
+
 
 export {evenAndOddCalculator, evenAndOddPercentageCalculator};
