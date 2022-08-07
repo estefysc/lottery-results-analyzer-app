@@ -14,13 +14,12 @@ let globalFourEvenInSet = 0;
 let globalFiveEvenInSet = 0;
 let globalSixEvenInSet = 0;
 
+let globalNumbersMap = new Map();
+
 // This function is used to calculate the amount of times even and odd numbers appear.
 function evenAndOddCalculator() {
     let totalEvenNumbers = 0;
     let totalOddNumbers = 0;
-
-    // let largestAmountEven = 0;
-    // let largestAmountOdd = 0;
 
     let zeroEvenInSet = 0;
     let oneEvenInSet = 0;
@@ -30,7 +29,8 @@ function evenAndOddCalculator() {
     let fiveEvenInSet = 0;
     let sixEvenInSet = 0;
 
-    // todo: Can this be more efficient using a hashmap or its equivalent in JavaScript?
+    let numbersMap = new Map();
+
     for(let i = 0; i < resultsArray.length; ++i) {
         let evenCounter = 0;
         let oddCounter = 0;
@@ -45,13 +45,9 @@ function evenAndOddCalculator() {
                 ++totalOddNumbers;
             }
 
-            // Is this information really necessary?
-            // if(evenCounter >= largestAmountEven) {
-            //     largestAmountEven = evenCounter;
-            // }
-            // if(oddCounter >= largestAmountOdd) {
-            //     largestAmountOdd = oddCounter;
-            // }
+            // Populates a map with all the numbers and the amount of times they appear.
+            // key is the number, value is the amount of times it appears in the set.
+            numbersMap.set(resultsArray[i][j], (numbersMap.get(resultsArray[i][j]) || 0) + 1);
         } // End of j-variable for loop. Checks each numbers in each set of six, one play.
 
         // These switch statements are used to count the amount of sets with zero even, zero odd, one even, one odd, etc.
@@ -98,9 +94,7 @@ function evenAndOddCalculator() {
     globalFiveEvenInSet = fiveEvenInSet;
     globalSixEvenInSet = sixEvenInSet;
 
-    // console.log();
-    // console.log(`greatest amount of even numbers per set = ${largestAmountEven}`);
-    // console.log(`greatest amount of odd numbers per set = ${largestAmountOdd}`);
+    globalNumbersMap = numbersMap;
 } // End of evenAndOddCalculator function.
 
 // Needs to be run after evenAndOddCalculator()
@@ -137,12 +131,16 @@ function evenAndOddPercentageCalculator() {
 } // End of evenAndOddPercentageCalculator function.
 
 // Function to check which is the six most repeated numbers in the set.
+function getSixMostRepeatedNumbers() {
+    // Sorts the map by value, from highest to lowest.
+    globalNumbersMap = new Map([...globalNumbersMap.entries()].sort((a, b) => b[1] - a[1]));
+    // Saves the six most repeated numbers in an array.
+    const sixMostRepeatedNumbers = Array.from(globalNumbersMap.keys()).slice(0, 6);
 
-// Use a hashTable - key is the number, value is the amount of times it appears in the set.
-// function mostRepeatedNumbers() {
-//
-//
-// }
+    console.log("The six most repeated numbers with its frequencies of appearance are as follows: ");
+    sixMostRepeatedNumbers.forEach(number => {
+        console.log(`${number}, appearing ${globalNumbersMap.get(number)} times`);
+    });
+} // End of getMostRepeatedNumbers function.
 
-
-export {evenAndOddCalculator, evenAndOddPercentageCalculator};
+export {evenAndOddCalculator, evenAndOddPercentageCalculator, getSixMostRepeatedNumbers};

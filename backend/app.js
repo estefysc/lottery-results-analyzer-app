@@ -4,9 +4,8 @@
 
 import express from "express";
 import getSetOFSix from "./index.js";
-import Console from "console";
 import {createJsonFile} from "./parser.js";
-import {evenAndOddCalculator, evenAndOddPercentageCalculator} from "./calculations.js";
+import {evenAndOddCalculator, evenAndOddPercentageCalculator, getSixMostRepeatedNumbers} from "./calculations.js";
 
 const app = express();
 
@@ -26,6 +25,7 @@ app.get("/", function(req, res){
     res.send(getSetOFSix());
     evenAndOddCalculator();
     evenAndOddPercentageCalculator();
+    getSixMostRepeatedNumbers();
 });
 
 // Connects to the lottery website and parses the data when the server is started.
