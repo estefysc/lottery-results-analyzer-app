@@ -1,13 +1,21 @@
 import React from 'react';
 import './App.css';
-import NumberList from './NumberList';
+import NumberList from './components/NumberList';
+import Particle from "./components/Particle";
+import Navigation from "./components/Navigation"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-      <div className='App'>
-        <header className='App-header'>
-          <NumberList />
-        </header>
+      <div>
+          <Navigation fixed="top"/>
+          <Particle />
+          <div>
+              <NumberList />
+          </div>
+
+
       </div>
   );
 }
