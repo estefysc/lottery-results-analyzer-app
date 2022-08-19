@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import NumberList from './components/NumberList';
 import Particle from "./components/Particle";
 import Navigation from "./components/Navigation"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import LoadingScreen from "./components/LoadingScreen";
-
+import MainInfo from "./components/MainInfo";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -19,11 +20,10 @@ function App() {
             {loading ?
                 (<LoadingScreen />) :
                 (<div>
-                    <Navigation fixed="top"/>
                     <Particle />
-                    <div>
-                        <NumberList />
-                    </div>
+
+                    <Navigation fixed="top"/>
+                    <MainInfo />
                 </div>)
             }
         </div>

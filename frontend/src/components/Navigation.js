@@ -3,10 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import "./Navigation.css";
+
 function Navigation() {
     return (
         <>
-            <Navbar bg="dark" variant="dark" expand="md">
+            <Navbar variant="dark" expand="md">
                 <Container>
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Navbar.Collapse id="responsive-navbar-nav">

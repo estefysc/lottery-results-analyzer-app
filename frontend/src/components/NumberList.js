@@ -19,7 +19,7 @@ function NumberList() {
             <button className='btn' onClick={getNumbers}>
                 Show Random Result
             </button>
-            <h1>{text}</h1>
+            <p className='number-text'>{text}</p>
         </div>
     )
 }
