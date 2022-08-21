@@ -1,26 +1,37 @@
 .main-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 60%;
+    justify-content: left;
+    width: 85%;
     height: 100%;
     padding: 20px;
     position: relative;
-    top: 11rem;
+    top: 155px;
 }
 .quote {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
+    font-size: 25px;
     font-weight: lighter;
     color: #C5C6C7;
-    padding-left: 3rem;
+    padding-left: 230px;
 }
 
 .main-info-question {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem;
+    font-size: 75px;
     color: #66FCF1;
-    text-align: center;
+    text-align: left;
+    padding-left: 215px;
+}
 
+.main-info-answer {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C5C6C7;
+    font-weight: lighter;
+    font-size: 30px;
+    padding-left: 230px;
+    padding-top: 15px;
+    align-self: center;
+    max-width: 100%;
 }

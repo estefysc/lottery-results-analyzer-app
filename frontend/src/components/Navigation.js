@@ -3,20 +3,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusMinus} from '@fortawesome/free-solid-svg-icons';
 import "./Navigation.css";
 
 function Navigation() {
     return (
         <>
             <Navbar variant="dark" expand="md">
-                <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand className="brand" href="#home">
+                    <FontAwesomeIcon icon={faPlusMinus} />
+                </Navbar.Brand>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#features">Option 2</Nav.Link>
-                            <Nav.Link href="#pricing">Option 3</Nav.Link>
-                            <NavDropdown title="Link" id="navbarScrollingDropdown">
+                            <Nav.Link className="nav-link" href="#home">About</Nav.Link>
+                            <NavDropdown className="drp-menu" title="Explore" id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action4">
                                     Another action
@@ -28,7 +29,6 @@ function Navigation() {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-                </Container>
             </Navbar>
 
             {/*<Navbar bg="light" variant="light">*/}
