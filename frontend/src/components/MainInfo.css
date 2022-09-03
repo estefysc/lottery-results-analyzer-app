@@ -20,7 +20,7 @@
 .main-info-question {
     font-family: 'Cormorant Garamond', serif;
     font-size: 75px;
-    color: #66FCF1;
+    color: #45A29E;
     text-align: left;
     padding-left: 215px;
 }
@@ -34,4 +34,14 @@
     padding-top: 15px;
     align-self: center;
     max-width: 100%;
+}
+
+.slide-enter {
+    opacity: 0;
+    transform:translateX(-100%);
+}
+.slide-enter-active {
+    opacity: 1;
+    transform:translateX(0);
+    transition: opacity 1500ms, transform 1500ms;
 }

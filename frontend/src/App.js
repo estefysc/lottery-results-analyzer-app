@@ -2,32 +2,41 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NumberList from './components/NumberList';
 import Particle from "./components/Particle";
 import Navigation from "./components/Navigation"
 import LoadingScreen from "./components/LoadingScreen";
 import MainInfo from "./components/MainInfo";
+import About from "./components/About";
+import {Routes,Route} from "react-router-dom";
+import NumberList from "./components/NumberList";
 
 function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => setLoading(false), 1000);
-    });
+        setTimeout(() => setLoading(false), 1500);
+    }, []);
 
     return (
         <div>
             {loading ?
                 (<LoadingScreen />) :
-                (<div>
-                    <Particle />
-
-                    <Navigation fixed="top"/>
-                    <MainInfo />
-                </div>)
+                (
+                    <div>
+                        <Navigation fixed="top"/>
+                        <Particle />
+                        <Routes>
+                            <Route path="/" element={<MainInfo />} />
+                            <Route path="about" element={<About />} />
+                            <Route path="numberList" element={<NumberList />} />
+                        </Routes>
+                    </div>
+                )
             }
         </div>
     );
 }
+
+
 
 export default App;

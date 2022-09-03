@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "./NumberList.css";
 
@@ -14,11 +14,14 @@ function NumberList() {
             });
     }
 
+    useEffect(() => getNumbers(), []);
+
     return(
+
         <div>
-            <button className='btn' onClick={getNumbers}>
-                Show Random Result
-            </button>
+            {/*<button className='btn' onClick={getNumbers}>*/}
+            {/*    Show Random Result*/}
+            {/*</button>*/}
             <p className='number-text'>{text}</p>
         </div>
     )

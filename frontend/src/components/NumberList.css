@@ -5,8 +5,13 @@
     z-index: 1;
 }
 .number-text {
-    color: blue;
-    background-color: aliceblue;
-
+    font-family: 'Cormorant Garamond', serif;
+    color: #45A29E;
+    margin: auto;
+    width: 50%;
+    height: auto;
+    font-weight: lighter;
+    font-size: 50px;
+    padding-top: 25px;
 }
 
