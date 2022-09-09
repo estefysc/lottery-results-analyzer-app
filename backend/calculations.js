@@ -63,10 +63,10 @@ function evenAndOddCalculator() {
                 break;
         }
 
-        console.log();
-        console.log(`For this result: ${resultsArray[i]}`);
-        console.log(`even = ${evenCounter}`);
-        console.log(`odd = ${oddCounter}`);
+        // console.log();
+        // console.log(`For this result: ${resultsArray[i]}`);
+        // console.log(`even = ${evenCounter}`);
+        // console.log(`odd = ${oddCounter}`);
     } // End of i-variable for loop. Checks each set of six.
 
     globalNumbersMap = numbersMap;
@@ -75,7 +75,7 @@ function evenAndOddCalculator() {
 
     return {
         totalEvenNumbers, totalOddNumbers, zeroEvenInSet, oneEvenInSet,
-        twoEvenInSet, threeEvenInSet, fourEvenInSet, fiveEvenInSet, sixEvenInSet, numbersMap
+        twoEvenInSet, threeEvenInSet, fourEvenInSet, fiveEvenInSet, sixEvenInSet
     }
 } // End of evenAndOddCalculator function.
 
@@ -122,6 +122,7 @@ function evenAndOddPercentageCalculator() {
 } // End of evenAndOddPercentageCalculator function.
 
 // Function to check which is the six most repeated numbers in the set.
+// todo: Find why this function is being ran twice.
 function getSixMostRepeatedNumbers() {
     // Sorts the map by value, from highest to lowest.
     globalNumbersMap = new Map([...globalNumbersMap.entries()].sort((a, b) => b[1] - a[1]));
@@ -129,10 +130,10 @@ function getSixMostRepeatedNumbers() {
     // Saves the six most repeated numbers in an array.
     let sixMostRepeatedNumbers = Array.from(globalNumbersMap.keys()).slice(0, 6);
 
-    console.log("The six most repeated numbers with its frequencies of appearance are as follows: ");
-    sixMostRepeatedNumbers.forEach(number => {
-        console.log(`${number}, appearing ${globalNumbersMap.get(number)} times`);
-    });
+    // console.log("The six most repeated numbers with its frequencies of appearance are as follows: ");
+    // sixMostRepeatedNumbers.forEach(number => {
+    //     console.log(`${number}, appearing ${globalNumbersMap.get(number)} times`);
+    // });
 
     console.log("getSixMostRepeatedNumbers() function has been run.");
 

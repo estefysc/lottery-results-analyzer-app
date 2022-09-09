@@ -3,7 +3,7 @@
 // const Parser = require('./Parser');
 
 import express from "express";
-import {getMostRepeated, getNumberData} from "./index.js";
+import {getMostRepeated, getNumberData, sendEvenOddData} from "./index.js";
 import {createJsonFile} from "./parser.js";
 
 const app = express();
@@ -25,6 +25,10 @@ app.get("/", function(req, res){
 
 app.get("/frequentNums", function(req, res) {
     res.send(getMostRepeated());
+});
+
+app.get("/evenOdd", function(req, res) {
+   res.send(sendEvenOddData());
 });
 
 // Connects to the lottery website and parses the data when the server is started.

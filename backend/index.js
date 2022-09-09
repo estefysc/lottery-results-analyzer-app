@@ -5,9 +5,11 @@ import {evenAndOddPercentageCalculator, getSixMostRepeatedNumbers} from "./calcu
 const require = createRequire(import.meta.url);
 const data = require("./data.json");
 
+let evenOddData;
+
 // Obtains the data from the lottery website.
 let getNumberData = () => {
-    evenAndOddPercentageCalculator();
+    evenOddData = evenAndOddPercentageCalculator();
 }
 
 // Obtains the six most repeated numbers.
@@ -17,6 +19,10 @@ let getMostRepeated = () => {
     };
 }
 
+let sendEvenOddData = () => {
+    return evenOddData;
+}
+
 // Obtains a set of six numbers randomly, which are the result of one lottery play, from the data.json file.
 // let getSetOFSix = () => {
 //     return {
@@ -24,4 +30,4 @@ let getMostRepeated = () => {
 //     };
 // }
 
-export {getMostRepeated, getNumberData};
+export {getMostRepeated, getNumberData, sendEvenOddData};
