@@ -27,17 +27,19 @@ function Navigation() {
                                 </Nav.Link>
                             </LinkContainer>
                             <NavDropdown className="drp-menu" title="Explore" id="navbarScrollingDropdown">
-                                <LinkContainer to="numberList">
+                                <LinkContainer to="frequentNums">
                                     <NavDropdown.Item className="drp-item">
-                                        Number List
+                                        Frequent Numbers
                                     </NavDropdown.Item>
                                 </LinkContainer>
-                                <NavDropdown.Item className="drp-item">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item className="drp-item">
-                                    Something else here
-                                </NavDropdown.Item>
+                                <LinkContainer to="">
+                                    <NavDropdown.Item className="drp-item">
+                                        Evens and Odds
+                                    </NavDropdown.Item>
+                                </LinkContainer>
+                                {/*<NavDropdown.Item className="drp-item">*/}
+                                {/*    Something else here*/}
+                                {/*</NavDropdown.Item>*/}
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

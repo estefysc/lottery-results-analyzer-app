@@ -8,7 +8,8 @@ import LoadingScreen from "./components/LoadingScreen";
 import MainInfo from "./components/MainInfo";
 import About from "./components/About";
 import {Routes,Route} from "react-router-dom";
-import NumberList from "./components/NumberList";
+import FrequentNums from "./components/FrequentNums";
+import EvenOdds from "./components/EvenOdds";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -27,8 +28,9 @@ function App() {
                         <Particle />
                         <Routes>
                             <Route path="/" element={<MainInfo />} />
-                            <Route path="about" element={<About />} />
-                            <Route path="numberList" element={<NumberList />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/frequentNums" element={<FrequentNums />} />
+                            <Route path="/evenOdds" element={<EvenOdds />} />
                         </Routes>
                     </div>
                 )

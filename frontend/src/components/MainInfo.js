@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
 
 import "./MainInfo.css";
+import axios from "axios";
 
 function MainInfo() {
     const [show, setShow] = useState(false);
@@ -10,7 +11,12 @@ function MainInfo() {
     //     setTimeout(() => setShow(true))
     // }, []);
 
+    function initData() {
+        axios.get("http://localhost:5000/", {crossdomain: true}).then();
+    }
+
     useEffect(() => setShow(true), []);
+    useEffect(() => initData(), []);
 
     return (
         <div className="main-info">
