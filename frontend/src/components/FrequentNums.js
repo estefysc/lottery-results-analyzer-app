@@ -17,10 +17,18 @@ function FrequentNums() {
 
     useEffect(() => getMostFreqNumbers(), []);
 
-    return(
+    return (
+        <div className='main-container'>
+            <div className='info-container'>
+                <p className='info-text'>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-        <div>
-            <p className='number-text'>{text}</p>
+                </p>
+            </div>
+            <div className='number-container'>
+                <p className='number-text'>{text}</p>
+            </div>
         </div>
     )
 }

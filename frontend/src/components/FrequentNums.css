@@ -1,10 +1,46 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 15%;
+}
+
+.number-container {
+    display: flex;
+    border: 1px black solid;
+    width: 25%;
+    height: auto;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.info-container {
+    display: flex;
+    border: 1px black solid;
+    width: 40%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
 .number-text {
     font-family: 'Cormorant Garamond', serif;
-    color: #45A29E;
-    margin: auto;
-    width: 50%;
+    color: #C5C6C7;
+    width: auto;
     height: auto;
     font-weight: lighter;
-    font-size: 50px;
-    padding-top: 25px;
+    font-size: 40px;
 }
+
+.info-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C5C6C7;
+    width: auto;
+    height: auto;
+    font-weight: lighter;
+    font-size: 30px;
+}
+
