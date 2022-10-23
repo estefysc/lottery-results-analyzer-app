@@ -4,22 +4,22 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto;
-    margin-top: 15%;
+    /*height: auto;*/
+    margin-top: 6%;
+    margin-left: 95px;
 }
 
 .number-container {
     display: flex;
-    border: 1px black solid;
-    width: 25%;
-    height: auto;
-    align-items: stretch;
+    /*border: 1px black solid;*/
+    width: 27%;
+    align-items: center;
     justify-content: center;
 }
 
 .info-container {
     display: flex;
-    border: 1px black solid;
+    /*border: 1px black solid;*/
     width: 40%;
     height: auto;
     align-items: center;
@@ -42,5 +42,10 @@
     height: auto;
     font-weight: lighter;
     font-size: 30px;
+}
+
+.list-container {
+    margin-left: 100px;
+    margin-top: 10px;
 }
 
