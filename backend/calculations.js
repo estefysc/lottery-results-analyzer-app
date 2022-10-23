@@ -124,11 +124,12 @@ function evenAndOddPercentageCalculator() {
 // Function to check which is the six most repeated numbers in the set.
 // todo: Find why this function is being ran twice.
 function getSixMostRepeatedNumbers() {
+    let totalPlays = resultsArray.length;
     // Sorts the map by value, from highest to lowest.
     globalNumbersMap = new Map([...globalNumbersMap.entries()].sort((a, b) => b[1] - a[1]));
 
-    // Saves the six most repeated numbers in an array.
-    let sixMostRepeatedNumbers = Array.from(globalNumbersMap.keys()).slice(0, 6);
+    // Saves the six most repeated numbers and its frequencies in an array.
+    let sixMostRepeatedNumbers = Array.from(globalNumbersMap.entries()).slice(0, 6);
 
     // console.log("The six most repeated numbers with its frequencies of appearance are as follows: ");
     // sixMostRepeatedNumbers.forEach(number => {
@@ -137,7 +138,7 @@ function getSixMostRepeatedNumbers() {
 
     console.log("getSixMostRepeatedNumbers() function has been run.");
 
-    return sixMostRepeatedNumbers;
+    return {sixMostRepeatedNumbers, totalPlays};
 } // End of getMostRepeatedNumbers function.
 
 export {evenAndOddCalculator, evenAndOddPercentageCalculator, getSixMostRepeatedNumbers};
