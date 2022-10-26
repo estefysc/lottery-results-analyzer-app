@@ -12,14 +12,14 @@ let getNumberData = () => {
     evenOddData = evenAndOddPercentageCalculator();
 }
 
-// Obtains the six most repeated numbers.
+// Obtains the six most repeated numbers and its frequencies.
 let getMostRepeated = () => {
     return {
         freqNums: getSixMostRepeatedNumbers()
     };
 }
 
-let sendEvenOddData = () => {
+let getEvenOddData = () => {
     return evenOddData;
 }
 
@@ -30,4 +30,4 @@ let sendEvenOddData = () => {
 //     };
 // }
 
-export {getMostRepeated, getNumberData, sendEvenOddData};
+export {getMostRepeated, getNumberData, getEvenOddData};

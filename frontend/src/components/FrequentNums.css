@@ -6,7 +6,7 @@
     width: 100%;
     /*height: auto;*/
     margin-top: 6%;
-    margin-left: 95px;
+    margin-left: 140px;
 }
 
 .number-container {
@@ -15,6 +15,7 @@
     width: 27%;
     align-items: center;
     justify-content: center;
+    padding-right: 80px;
 }
 
 .info-container {
@@ -37,7 +38,7 @@
 
 .info-text {
     font-family: 'Cormorant Garamond', serif;
-    color: #C5C6C7;
+    color: #45A29E;
     width: auto;
     height: auto;
     font-weight: lighter;
@@ -45,7 +46,8 @@
 }
 
 .list-container {
-    margin-left: 100px;
+    color: #C5C6C7;
+    margin-left: 60px;
     margin-top: 10px;
 }
 

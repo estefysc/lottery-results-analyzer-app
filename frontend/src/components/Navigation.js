@@ -32,7 +32,7 @@ function Navigation() {
                                         Frequent Numbers
                                     </NavDropdown.Item>
                                 </LinkContainer>
-                                <LinkContainer to="">
+                                <LinkContainer to="evenOdds">
                                     <NavDropdown.Item className="drp-item">
                                         Evens and Odds
                                     </NavDropdown.Item>

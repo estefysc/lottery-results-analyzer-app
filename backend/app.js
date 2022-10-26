@@ -3,8 +3,9 @@
 // const Parser = require('./Parser');
 
 import express from "express";
-import {getMostRepeated, getNumberData, sendEvenOddData} from "./index.js";
+import {getMostRepeated, getNumberData, getEvenOddData} from "./index.js";
 import {createJsonFile} from "./parser.js";
+// import * as path from "path";
 
 const app = express();
 
@@ -12,6 +13,8 @@ let port = process.env.PORT;
 if(port == null || port == "") {
     port = 5000;
 }
+
+// app.use(express.static(path.resolve(__dirname, "./frontend/build")));
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -28,7 +31,7 @@ app.get("/frequentNums", function(req, res) {
 });
 
 app.get("/evenOdd", function(req, res) {
-   res.send(sendEvenOddData());
+   res.send(getEvenOddData());
 });
 
 // Connects to the lottery website and parses the data when the server is started.
