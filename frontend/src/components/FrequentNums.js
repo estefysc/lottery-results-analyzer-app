@@ -116,8 +116,10 @@ function FrequentNums() {
         <div className='main-container'>
             <div className='info-container'>
                 <p className='info-text'>
-                    The Florida Lotto lets you choose 6 numbers from 1 to 53. The lottery has been played since 1988, and
-                    there have been {plays} draws so far. The most frequent numbers are:
+                    The Florida Lotto, played since 1988, lets you choose 6 numbers between 1 and 53. So far, there
+                    have been a total of {plays} draws.
+                    The six most frequent numbers and their frequencies appear below:
+
                     <div className='list-container'>
                         {listItems}
                     </div>
@@ -126,14 +128,14 @@ function FrequentNums() {
 
             <div className='number-container'>
                 <ResponsiveContainer width="100%" aspect={3}>
-                    <PieChart width={400} height={400}>
+                    <PieChart>
                         <Pie
                             dataKey="value"
                             startAngle={180}
                             endAngle={0}
                             data={data}
-                            cx="50%"
-                            cy="80%"
+                            cx="29%"
+                            cy="100%"
                             outerRadius={80}
                             fill="#45A29E"
                             label={renderCustomizedLabel}

@@ -22,7 +22,7 @@ function MainInfo() {
         <div className="main-info">
             <div className="main-info-text">
                 <h1 className="quote">
-                    <q>God delights in odd numbers</q> -Virgil
+                    <q>Millions saw the apple fall, but Newton asked why.</q> -Bernard Baruch
                 </h1>
                 <h3 className="main-info-question">
                     Curious about numbers?
@@ -33,11 +33,9 @@ function MainInfo() {
                     classNames="slide"
                 >
                     <p className="main-info-answer">
-                        Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        There are more than 42 million people in the United States who play the lottery every week.
+                        And, most of them think that it’s just a matter of luck or fate. However, lotteries are also a game of numbers, not only chance.
+                        Explore this app to find some number patters in the Florida Lotto draws.
                     </p>
                 </CSSTransition>
             </div>

@@ -17,9 +17,9 @@ function About() {
                 classNames="fade"
             >
                 <p className="about-app-pgh">
-                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    This app explores the Florida Lotto draws history to find some number patters in the results. The app currently shows the six most frequent numbers
+                    and the amount of times, as a percentage, even numbers appear in the result sets. More insights will be added in the future.
+                    This app is built with React, Node JS, and Express.
                 </p>
             </CSSTransition>
             <h2 className="second-title">The Creator</h2>
@@ -29,9 +29,8 @@ function About() {
                 classNames="fade"
             >
                 <p className="about-creator-pgh">
-                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Estefanía Sánchez, born in Peru and raised in Mexico, graduated from Valencia College with a Bachelor of Applied Science in Software Development with a minor in music theory and composition.
+                    Some of her passions include art, soccer, and technology. She aims to explore creativity, machine learning, and artificial intelligence as she continues her education beyond her bachelor's degree.
                 </p>
             </CSSTransition>
         </div>
