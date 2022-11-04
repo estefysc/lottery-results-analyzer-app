@@ -103,11 +103,10 @@ function createJsonFile() {
         fs.writeFile("data.json", resultArrayJson, function (err) {
             console.log(err ? 'Error :' + err : 'File created')
         });
+        console.log(resultsArray.length);
     });
     return resultArrayJson;
 }
-
-createJsonFile();
 
 // The resultsArray variable is exported to be used in the calculations.js file.
 export {createJsonFile, resultsArray};
