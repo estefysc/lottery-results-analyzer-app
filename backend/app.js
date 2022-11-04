@@ -14,8 +14,6 @@ if(port == null || port == "") {
     port = 5000;
 }
 
-// app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

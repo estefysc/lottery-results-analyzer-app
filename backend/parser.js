@@ -41,16 +41,23 @@ let wordsArrayPromise = new Promise(function(resolve, reject) {
         resolve(
             got(lotteryURL).then(response => {
 
-                const pattern = new RegExp('[0-9]+-');
-                const patternSec = new RegExp('[0-9]+/')
+                const pattern = new RegExp('[0-9]+-', 'g');
+                const secondPattern = new RegExp('\\d+\\/\\d+', 'g');
                 const $ = cheerio.load(response.body);
 
+                // THIS CODE STOPPED WORKING AROUND THE WEEK OF 10/24/2022 - STACK ERROR
                 // response.body contained in the $ constant is filtered by 'td' and converted to text.
                 // The numbers from the dates of the results, which are followed by - or /, will be replaced with 'NaN'
                 // so when the intArray is populated, those numbers are not included as lottery results.
-                $('td').each((index, element) => {
-                    wordArray.push($(element).text().replace(pattern, 'NaN').replace(patternSec, 'NaN'));
-                });
+                // $('td').each((index, element) => {
+                //     wordArray.push($(element).text().replace(pattern, 'NaN').replace(patternSec, 'NaN'));
+                // });
+
+                let text = $('body').text();
+                // filter text to replace all numbers followed by - or / with NaN.
+                let replacedText = text.replace(pattern, 'NaN').replace(secondPattern, 'NaN');
+                // Separates the text by words.
+                wordArray = replacedText.split(' ');
 
             }).catch(err => {
                 console.log(err);
@@ -99,6 +106,8 @@ function createJsonFile() {
     });
     return resultArrayJson;
 }
+
+createJsonFile();
 
 // The resultsArray variable is exported to be used in the calculations.js file.
 export {createJsonFile, resultsArray};
