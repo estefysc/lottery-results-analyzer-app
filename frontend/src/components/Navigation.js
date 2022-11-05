@@ -4,17 +4,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./Navigation.css";
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {faPlusMinus} from '@fortawesome/free-solid-svg-icons';
 import {LinkContainer} from 'react-router-bootstrap'
 
 function Navigation() {
     return (
         <>
-            <Navbar variant="dark" expand="md">
-                <Navbar.Brand className="brand">
-                    <FontAwesomeIcon icon={faPlusMinus} />
-                </Navbar.Brand>
-                    <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar variant="dark" expand="lg">
+                {/*<div className="container">*/}
+                    <Navbar.Brand className="brand">
+                        <FontAwesomeIcon icon={faPlusMinus} />
+                    </Navbar.Brand>
+                    <Navbar.Toggle className="collapsed-nav" aria-controls="basic-navbar-nav">
+                        <span >
+                            <FontAwesomeIcon className="bars" icon={faBars} />
+                        </span>
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="me-auto">
                             {/*<LinkContainer to="/">*/}
                             {/*    <Nav.Link className="nav-link">*/}
@@ -43,6 +50,7 @@ function Navigation() {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
+                {/*</div>*/}
             </Navbar>
         </>
     );
