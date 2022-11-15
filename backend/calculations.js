@@ -4,7 +4,8 @@ const numbersInOnePlay = 6;
 
 let globalNumbersMap = new Map();
 
-// This function runs within the evenAndOddPercentageCalculator() function and is used to calculate the amount of times even and odd numbers appear.
+// This function runs within the evenAndOddPercentageCalculator() function and is used to calculate the amount of times
+// even and odd numbers appear.
 function evenAndOddCalculator() {
     let totalEvenNumbers = 0;
     let totalOddNumbers = 0;
@@ -79,7 +80,6 @@ function evenAndOddCalculator() {
     }
 } // End of evenAndOddCalculator function.
 
-// Needs to be run after evenAndOddCalculator()
 function evenAndOddPercentageCalculator() {
     let numbersData = evenAndOddCalculator();
 
@@ -96,23 +96,6 @@ function evenAndOddPercentageCalculator() {
     let percentFiveEven = (numbersData.fiveEvenInSet * 100.00) / amountOfSets;
     let percentSixEven = (numbersData.sixEvenInSet * 100.00) / amountOfSets;
 
-    // console.log();
-    // console.log(`Total sets = ${amountOfSets}`);
-    // console.log(`Total even numbers = ${numbersData.totalEvenNumbers}`);
-    // console.log(`Total odd numbers = ${numbersData.totalOddNumbers}`);
-    // console.log();
-    // console.log(`Average amount of even numbers per set = ${averageEven}`);
-    // console.log(`Average amount of odd numbers per set = ${averageOdd}`);
-    // console.log();
-    // console.log(`The amount of sets with zero even numbers or six odd numbers is ${numbersData.zeroEvenInSet}, a percentage of ${percentZeroEven}%`);
-    // console.log(`The amount of sets with one even numbers or five odd numbers is ${numbersData.oneEvenInSet}, a percentage of ${percentOneEven}%`);
-    // console.log(`The amount of sets with two even numbers or four odd numbers is ${numbersData.twoEvenInSet}, a percentage of ${percentTwoEven}%`);
-    // console.log(`The amount of sets with three even numbers or three odd numbers is ${numbersData.threeEvenInSet}, a percentage of ${percentThreeEven}%`);
-    // console.log(`The amount of sets with four even numbers or two odd numbers is ${numbersData.fourEvenInSet}, a percentage of ${percentFourEven}%`);
-    // console.log(`The amount of sets with five even numbers or one odd numbers is ${numbersData.fiveEvenInSet}, a percentage of ${percentFiveEven}%`);
-    // console.log(`The amount of sets with six even numbers or zero odd numbers is ${numbersData.sixEvenInSet}, a percentage of ${percentSixEven}%`);
-    // console.log();
-
     console.log("evenAndOddPercentageCalculator() function has been run.");
 
     return {
@@ -121,7 +104,7 @@ function evenAndOddPercentageCalculator() {
     }
 } // End of evenAndOddPercentageCalculator function.
 
-// Function to check which is the six most repeated numbers in the set.
+// Function to check which is the six most repeated numbers.
 // todo: Find why this function is being ran twice.
 function getSixMostRepeatedNumbers() {
     let totalPlays = resultsArray.length;

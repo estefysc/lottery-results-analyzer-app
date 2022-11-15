@@ -13,13 +13,11 @@ let resultArrayJson;
 
 // Helper function to create a 2d array for the results.
 function create2dArray(rows, columns, numArr) {
-    let twoDimArray = [];
+    let twoDimArray = new Array(rows);
     let numsArrayIndex = 0;
 
     for(let i = 0; i < rows; i++) {
-        twoDimArray.push([]);
-
-        twoDimArray[i].push(new Array(columns));
+        twoDimArray[i] = new Array(columns);
 
         for(let j = 0; j < columns; j++) {
             if(numsArrayIndex < numArr.length) {
@@ -29,6 +27,7 @@ function create2dArray(rows, columns, numArr) {
 
         }
     }
+    console.log(twoDimArray);
     return twoDimArray;
 }
 
