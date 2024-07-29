@@ -17,7 +17,7 @@ function About() {
                 classNames="fade"
             >
                 <p className="about-app-pgh">
-                    This app explores the Florida Lotto draws history to find some number patters in the results. The app currently shows the six most frequent numbers
+                    Everytime you access this app, the lottery results are updated through website-scrapping. The app currently shows the six most frequent numbers
                     and the amount of times, as a percentage, even numbers appear in the result sets. More insights will be added in the future.
                     This app is built with React, Node JS, and Express.
                 </p>
@@ -31,6 +31,11 @@ function About() {
                 <p className="about-creator-pgh">
                     Estefanía Sánchez, born in Peru and raised in Mexico, graduated from Valencia College with a Bachelor of Applied Science in Software Development with a minor in music theory and composition.
                     Some of her passions include art, soccer, and technology. She aims to explore creativity, machine learning, and artificial intelligence as she continues her education beyond her bachelor's degree.
+                    Check out the code for this app and other projects{' '}
+                    <a href="https://github.com/estefysc?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    here
+                    </a>
+                    .
                 </p>
             </CSSTransition>
         </div>

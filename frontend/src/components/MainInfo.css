@@ -5,8 +5,9 @@
     justify-content: left;
     width: 85%;
     height: 100%;
-    padding: 20px;
+    padding: 2%;
     position: relative;
+    /*top: 100%;*/
     top: 155px;
 }
 .quote {

@@ -4,9 +4,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    /*height: auto;*/
     margin-top: 6%;
-    margin-left: 140px;
+    margin-left: 7.3%
 }
 
 .number-container {
@@ -15,7 +14,8 @@
     width: 27%;
     align-items: center;
     justify-content: center;
-    padding-right: 80px;
+    /*padding-right: 80px;*/
+    padding-right: 5.5%;
 }
 
 .info-container {
