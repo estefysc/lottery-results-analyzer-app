@@ -1,11 +1,6 @@
-// const express = require("express");
-// const Quote = require('inspirational-quotes');
-// const Parser = require('./Parser');
-
 import express from "express";
 import {getMostRepeated, getNumberData, getEvenOddData} from "./index.js";
 import {createJsonFile} from "./parser.js";
-// import * as path from "path";
 
 const app = express();
 

@@ -1,15 +1,16 @@
 import {resultsArray} from "./parser.js";
 
-const numbersInOnePlay = 6;
+//const numbersInOnePlay = 6;
 
 let globalNumbersMap = new Map();
 
 // This function runs within the evenAndOddPercentageCalculator() function and is used to calculate the amount of times
 // even and odd numbers appear.
 function evenAndOddCalculator() {
+    const numbersInOnePlay = 6;
+
     let totalEvenNumbers = 0;
     let totalOddNumbers = 0;
-
     let zeroEvenInSet = 0;
     let oneEvenInSet = 0;
     let twoEvenInSet = 0;
@@ -20,10 +21,12 @@ function evenAndOddCalculator() {
 
     let numbersMap = new Map();
 
+    // Checks each set of six.
     for(let i = 0; i < resultsArray.length; ++i) {
         let evenCounter = 0;
         let oddCounter = 0;
 
+        // Checks each number in each set of six, one play.
         for(let j = 0; j < numbersInOnePlay; ++j) {
             // Checks if the number is even.
             if(resultsArray[i][j] % 2 === 0) {
@@ -35,9 +38,9 @@ function evenAndOddCalculator() {
             }
 
             // Populates a map with all the numbers and the amount of times they appear.
-            // key is the number, value is the amount of times it appears in the set.
+            // key is the number, value is the amount of times it appears in the results.
             numbersMap.set(resultsArray[i][j], (numbersMap.get(resultsArray[i][j]) || 0) + 1);
-        } // End of j-variable for loop. Checks each numbers in each set of six, one play.
+        } 
 
         // These switch statements are used to count the amount of sets with zero even, zero odd, one even, one odd, etc.
         switch (evenCounter) {
@@ -63,12 +66,7 @@ function evenAndOddCalculator() {
                 ++zeroEvenInSet;
                 break;
         }
-
-        // console.log();
-        // console.log(`For this result: ${resultsArray[i]}`);
-        // console.log(`even = ${evenCounter}`);
-        // console.log(`odd = ${oddCounter}`);
-    } // End of i-variable for loop. Checks each set of six.
+    } 
 
     globalNumbersMap = numbersMap;
 
