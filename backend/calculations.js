@@ -1,7 +1,5 @@
 import {resultsArray} from "./parser.js";
 
-//const numbersInOnePlay = 6;
-
 let globalNumbersMap = new Map();
 
 // This function runs within the evenAndOddPercentageCalculator() function and is used to calculate the amount of times
@@ -21,53 +19,34 @@ function evenAndOddCalculator() {
 
     let numbersMap = new Map();
 
-    // Checks each set of six.
-    for(let i = 0; i < resultsArray.length; ++i) {
+    resultsArray.forEach((play) => {
         let evenCounter = 0;
-        let oddCounter = 0;
-
-        // Checks each number in each set of six, one play.
-        for(let j = 0; j < numbersInOnePlay; ++j) {
-            // Checks if the number is even.
-            if(resultsArray[i][j] % 2 === 0) {
-                ++evenCounter;
-                ++totalEvenNumbers;
-            } else {
-                ++oddCounter;
-                ++totalOddNumbers;
+    
+        play.forEach((number) => {
+            // Check if the number is even.
+            if (number % 2 === 0) {
+                evenCounter++;
             }
+    
+            // Populate the map with the number and its count.
+            numbersMap.set(number, (numbersMap.get(number) || 0) + 1);
+        });
 
-            // Populates a map with all the numbers and the amount of times they appear.
-            // key is the number, value is the amount of times it appears in the results.
-            numbersMap.set(resultsArray[i][j], (numbersMap.get(resultsArray[i][j]) || 0) + 1);
-        } 
+        totalEvenNumbers += evenCounter;
+        totalOddNumbers += (numbersInOnePlay - evenCounter);
 
-        // These switch statements are used to count the amount of sets with zero even, zero odd, one even, one odd, etc.
         switch (evenCounter) {
-            case 1:
-                ++oneEvenInSet;
-                break;
-            case 2:
-                ++twoEvenInSet;
-                break;
-            case 3:
-                ++threeEvenInSet;
-                break;
-            case 4:
-                ++fourEvenInSet;
-                break;
-            case 5:
-                ++fiveEvenInSet;
-                break;
-            case 6:
-                ++sixEvenInSet;
-                break;
-            default:
-                ++zeroEvenInSet;
-                break;
+            case 1: oneEvenInSet++; break;
+            case 2: twoEvenInSet++; break;
+            case 3: threeEvenInSet++; break;
+            case 4: fourEvenInSet++; break;
+            case 5: fiveEvenInSet++; break;
+            case 6: sixEvenInSet++; break;
+            default: zeroEvenInSet++; break;
         }
-    } 
+    });
 
+    //TODO: See if the global variable can be eliminated
     globalNumbersMap = numbersMap;
 
     console.log("evenAndOddCalculator() function has been run.");
