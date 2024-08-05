@@ -1,7 +1,5 @@
 import {resultsArray} from "./parser.js";
 
-let globalNumbersMap = new Map();
-
 // This function runs within the evenAndOddPercentageCalculator() function and is used to calculate the amount of times
 // even and odd numbers appear.
 function evenAndOddCalculator() {
@@ -46,20 +44,18 @@ function evenAndOddCalculator() {
         }
     });
 
-    //TODO: See if the global variable can be eliminated
-    globalNumbersMap = numbersMap;
-
     console.log("evenAndOddCalculator() function has been run.");
 
     return {
         totalEvenNumbers, totalOddNumbers, zeroEvenInSet, oneEvenInSet,
-        twoEvenInSet, threeEvenInSet, fourEvenInSet, fiveEvenInSet, sixEvenInSet
+        twoEvenInSet, threeEvenInSet, fourEvenInSet, fiveEvenInSet, sixEvenInSet,
+        numbersMap
     }
 } // End of evenAndOddCalculator function.
 
 function evenAndOddPercentageCalculator() {
     let numbersData = evenAndOddCalculator();
-
+    
     let amountOfSets = resultsArray.length;
 
     let averageEven = numbersData.totalEvenNumbers / amountOfSets;
@@ -77,24 +73,18 @@ function evenAndOddPercentageCalculator() {
 
     return {
         averageEven, averageOdd, percentZeroEven, percentOneEven, percentTwoEven, percentThreeEven, percentFourEven,
-        percentFiveEven, percentSixEven, numbersData
+        percentFiveEven, percentSixEven, numbersMap: numbersData.numbersMap
     }
 } // End of evenAndOddPercentageCalculator function.
 
 // Function to check which is the six most repeated numbers.
-// todo: Find why this function is being ran twice.
-function getSixMostRepeatedNumbers() {
+function getSixMostRepeatedNumbers(numMap) {
     let totalPlays = resultsArray.length;
     // Sorts the map by value, from highest to lowest.
-    globalNumbersMap = new Map([...globalNumbersMap.entries()].sort((a, b) => b[1] - a[1]));
+    let sortedNumbersMap = new Map([...numMap.entries()].sort((a, b) => b[1] - a[1]));
 
     // Saves the six most repeated numbers and its frequencies in an array.
-    let sixMostRepeatedNumbers = Array.from(globalNumbersMap.entries()).slice(0, 6);
-
-    // console.log("The six most repeated numbers with its frequencies of appearance are as follows: ");
-    // sixMostRepeatedNumbers.forEach(number => {
-    //     console.log(`${number}, appearing ${globalNumbersMap.get(number)} times`);
-    // });
+    let sixMostRepeatedNumbers = Array.from(sortedNumbersMap.entries()).slice(0, 6);
 
     console.log("getSixMostRepeatedNumbers() function has been run.");
 
