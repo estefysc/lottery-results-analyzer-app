@@ -26,11 +26,11 @@ test('evenAndOddCalculator calculates correctly', () => {
     expect(result.sixEvenInSet).toBe(0); 
 
     // Check numbersMap content
-    // const expectedNumbersMap = new Map([
-    //     [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1],
-    //     [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1],
-    //     [13, 1], [14, 1], [15, 1], [16, 1], [17, 1], [18, 1]
-    // ]);
+    const expectedNumbersMap = new Map([
+        [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1],
+        [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1],
+        [13, 1], [14, 1], [15, 1], [16, 1], [17, 1], [18, 1]
+    ]);
 
-    // expect(Array.from(result.numbersMap.entries())).toEqual(Array.from(expectedNumbersMap.entries()));
+    expect(Array.from(result.numbersMap.entries())).toEqual(Array.from(expectedNumbersMap.entries()));
 });
