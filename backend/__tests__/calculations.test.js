@@ -67,13 +67,16 @@ describe('Calculations Tests', () => {
 
         expect(result.averageEven).toBe(20 / amountOfSets);
         expect(result.averageOdd).toBe(16 / amountOfSets);
-        expect(result.percentZeroEven).toBe(0);
-        expect(result.percentOneEven).toBe(0);
+        expect(result.percentZeroEven).toBe((0 * 100.0) / amountOfSets);
+        expect(result.percentOneEven).toBe((0 * 100.0) / amountOfSets);
         expect(result.percentTwoEven).toBe((1 * 100.0) / amountOfSets);
         expect(result.percentThreeEven).toBe((3 * 100.0) / amountOfSets);
         expect(result.percentFourEven).toBe((1 * 100.0) / amountOfSets);
         expect(result.percentFiveEven).toBe((1 * 100.0) / amountOfSets);
-        expect(result.percentSixEven).toBe(0);
+        expect(result.percentSixEven).toBe((0 * 100.0) / amountOfSets);
+
+        expect(result.percentZeroEven + result.percentOneEven + result.percentTwoEven + result.percentThreeEven + 
+            result.percentFourEven + result.percentFiveEven + result.percentSixEven).toBeCloseTo(100, 5);
 
         expect(Array.from(result.numbersMap.entries())).toEqual(Array.from(expectedNumbersMap.entries()));
     });
