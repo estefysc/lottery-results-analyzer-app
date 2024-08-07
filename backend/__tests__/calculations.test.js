@@ -1,4 +1,4 @@
-import { evenAndOddCalculator, evenAndOddPercentageCalculator } from '../calculations.js';
+import { evenAndOddCalculator, evenAndOddPercentageCalculator, getSixMostRepeatedNumbers } from '../calculations.js';
 
 const resultsArray = [
     [1, 10, 31, 39, 50, 53],
@@ -76,6 +76,21 @@ describe('Calculations Tests', () => {
         expect(result.percentSixEven).toBe(0);
 
         expect(Array.from(result.numbersMap.entries())).toEqual(Array.from(expectedNumbersMap.entries()));
+    });
+
+    test('getSixMostRepeatedNumbers calculates correctly', () => {
+        const result = getSixMostRepeatedNumbers(expectedNumbersMap);
+
+        expect(result.sixMostRepeatedNumbers).toEqual([
+            [50, 4],
+            [16, 3],
+            [10, 2],
+            [39, 2],
+            [42, 2],
+            [1, 1] 
+        ]);
+
+        expect(result.totalPlays).toBe(resultsArray.length);
     });
 });
     
