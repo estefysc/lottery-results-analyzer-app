@@ -3,7 +3,7 @@
 ## Introduction
 
 ### Project Description
-This project extracts the results from the Florida Lotto website in order to do some number analysis. Due to specific Heroku requirements, this is my testing environment for the Heroku code, which you can find [here:](https://github.com/estefysc/lottery-results-analyzer-heroku-). The app can be accessed [here:](https://lottery-analyzer.herokuapp.com/). Note that the website will take a bit of time the first time is accessed as Heroku needs to activate the Dynos in which the website runs. This project is still being updated.
+This project extracts the results from the Florida Lotto website in order to do some number analysis. Due to specific Heroku requirements, this is my testing environment for the Heroku code, which you can find [here](https://github.com/estefysc/lottery-results-analyzer-heroku-). The app can be accessed [here](https://lottery-analyzer.herokuapp.com/). Note that the website will take a bit of time the first time is accessed as Heroku needs to activate the Dynos in which the website runs. This project is still being updated.
 
 ### Features
 - Analyze frequency of numbers
