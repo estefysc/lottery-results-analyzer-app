@@ -51,10 +51,10 @@ Once both the backend and frontend are running, navigate to http://localhost:300
 To run the tests for this project, you need to navigate to the backend directory and use the `npm test` command. Below are the steps to follow:
 
 ### Steps to Run Tests:
-1. **Navigate to the Backend Directory:**
-   First, make sure you are in the root of the project directory. Then, navigate to the backend folder:
+1. **Navigate to the Backend Directory:**  
+   First, make sure you are in the root of the project directory. Then, navigate to the backend folder:  
    `cd backend`
-2. **Run the Tests:**
+2. **Run the Tests:**  
     Execute the `npm test` command.
 
 ##  Frameworks
