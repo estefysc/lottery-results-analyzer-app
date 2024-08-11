@@ -3,22 +3,17 @@
 ## Introduction
 
 ### Project Description
-This project is a [brief description of the app, e.g., "lottery statistics and number analysis tool"] that allows users to [describe what users can do, e.g., "analyze the frequency of lottery numbers, view distribution graphs, and more"]. The app provides an intuitive interface for users to gain insights into patterns and probabilities based on historical data.
-
-### Purpose
-The app is designed to help users make informed decisions by providing detailed statistical analysis of lottery numbers, helping to identify patterns and trends that may not be immediately obvious.
+This project extracts the results from the Florida Lotto website in order to do some number analysis. Due to specific Heroku requirements, this is my testing environment for the Heroku code, which you can find [here:](https://github.com/estefysc/lottery-results-analyzer-heroku-). The app can be accessed [here:](https://lottery-analyzer.herokuapp.com/). Note that the website will take a bit of time the first time is accessed as Heroku needs to activate the Dynos in which the website runs. This project is still being updated.
 
 ### Features
-- View distribution of numbers over time
 - Analyze frequency of numbers
 - Graphical representation of even and odd number occurrences
-- Loading screen to enhance user experience during data processing
 
 ## Installation Instructions
 
 ### Prerequisites
-- Node.js (version X.X.X)
-- npm (version X.X.X)
+- Node.js (version >=16.13.2)
+- npm (version >=8.3.1)
 
 ### Installation Steps
 
