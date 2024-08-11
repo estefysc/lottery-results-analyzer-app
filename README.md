@@ -25,20 +25,20 @@ The app is designed to help users make informed decisions by providing detailed 
 #### Backend:
 1. **Clone the repository:**  
    `cd your-repo-name`  
-   > `git clone https://github.com/yourusername/your-repo-name.git`  
-2. **Navigate to the backend directory:**
-    `cd backend`
-3. **Install the dependencies:**
-    `npm install`
-4. **Run the backend server:**
+   `git clone https://github.com/yourusername/your-repo-name.git`  
+2. **Navigate to the backend directory:**  
+    `cd backend`  
+3. **Install the dependencies:**  
+    `npm install`  
+4. **Run the backend server:**  
     `npm start`
 
 #### Frontend:
-1. **Navigate to the frontend directory:**
-    `cd frontend`
-2. **Install the dependencies:**
-    `npm install`
-3. **Run the frontend server:**
+1. **Navigate to the frontend directory:**  
+    `cd frontend`  
+2. **Install the dependencies:**  
+    `npm install`  
+3. **Run the frontend server:**  
     `npm start`
 
 ##  Usage
