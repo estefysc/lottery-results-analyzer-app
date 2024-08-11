@@ -1,4 +1,4 @@
-# Lottery Analyzer**
+# Lottery Analyzer
 
 ## Introduction
 
@@ -58,6 +58,6 @@ To run the tests for this project, you need to navigate to the backend directory
     Execute the `npm test` command.
 
 ##  Frameworks
-React - The front-end framework used.
-Express.js - The back-end framework used.
+React - The front-end framework used.  
+Express.js - The back-end framework used.  
 Jest - For testing.
