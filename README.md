@@ -20,7 +20,7 @@ This project extracts the results from the Florida Lotto website in order to do 
 #### Backend:
 1. **Clone the repository:**  
    `cd your-repo-name`  
-   `git clone https://github.com/yourusername/your-repo-name.git`  
+   `git clone https://github.com/estefysc/lottery-results-analyzer-app.git`  
 2. **Navigate to the backend directory:**  
     `cd backend`  
 3. **Install the dependencies:**  
@@ -30,6 +30,7 @@ This project extracts the results from the Florida Lotto website in order to do 
 
 #### Frontend:
 1. **Navigate to the frontend directory:**  
+    `cd ..`  
     `cd frontend`  
 2. **Install the dependencies:**  
     `npm install`  
