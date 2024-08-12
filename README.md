@@ -18,19 +18,15 @@ This project extracts the results from the Florida Lotto website in order to do 
 ### Installation Steps
 
 #### Backend:
-1. **Clone the repository:**  
-   `cd your-repo-name`  
-   `git clone https://github.com/estefysc/lottery-results-analyzer-app.git`  
-2. **Navigate to the backend directory:**  
+1. **Navigate to the backend directory:**  
     `cd backend`  
-3. **Install the dependencies:**  
+2. **Install the dependencies:**  
     `npm install`  
-4. **Run the backend server:**  
+3. **Run the backend server:**  
     `npm start`
 
 #### Frontend:
-1. **Navigate to the frontend directory:**  
-    `cd ..`  
+1. **Navigate to the frontend directory on a new terminal window:**  
     `cd frontend`  
 2. **Install the dependencies:**  
     `npm install`  
@@ -39,7 +35,7 @@ This project extracts the results from the Florida Lotto website in order to do 
 
 ##  Usage
 ### How to Use the Project
-Once both the backend and frontend are running, navigate to http://localhost:3000 in your web browser. You'll be able to:
+Once both the backend and frontend are running, a window with the http://localhost:3000 url will open in your web browser. You'll be able to:
 - Navigate through different pages using the navigation bar.
 - Analyze the data using the interactive graphs and charts.
 
