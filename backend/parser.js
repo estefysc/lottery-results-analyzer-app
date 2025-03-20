@@ -70,41 +70,91 @@ let wordsArrayPromise = new Promise(function(resolve, reject) {
 // todo: find something meaningful to use instead of the test variable.
 // This function is a promise that will create the resultsArray, which is a 2d array containing only the lottery results.
 let createResultsArray = function (arrayWithWords) {
-    new Promise(function (resolve, reject) {
-        let test = true;
+    // new Promise(function (resolve, reject) {
+    //     let test = true;
 
-        if (test) {
-            resolve(
-                arrayWithWords.forEach(element => {
-                    // Each element that is a number is converted to an integer and pushed to the intArray.
-                    if (!isNaN(parseInt(element))) {
-                        intArray.push(parseInt(element));
-                    }
-                }),
+    //     if (test) {
+    //         resolve(
+    //             arrayWithWords.forEach(element => {
+    //                 // Each element that is a number is converted to an integer and pushed to the intArray.
+    //                 if (!isNaN(parseInt(element))) {
+    //                     intArray.push(parseInt(element));
+    //                 }
+    //             }),
 
-                numOfRows = intArray.length / numsPerPlay,
+    //             numOfRows = intArray.length / numsPerPlay,
 
-                resultsArray = create2dArray(numOfRows, numsPerPlay, intArray),
-            );
-        } else {
-            reject("the promise within the createResultsArray function did not work");
+    //             resultsArray = create2dArray(numOfRows, numsPerPlay, intArray),
+    //         );
+    //     } else {
+    //         reject("the promise within the createResultsArray function did not work");
+    //     }
+    // }).then();
+
+    return new Promise(function (resolve, reject) {
+        try {
+            // Create a local array for processing
+            const localIntArray = [];
+            
+            // Process each element
+            arrayWithWords.forEach(element => {
+                // Each element that is a number is converted to an integer and pushed to the array
+                if (!isNaN(parseInt(element))) {
+                    localIntArray.push(parseInt(element));
+                }
+            });
+            
+            const rows = localIntArray.length / numsPerPlay;
+            const results = create2dArray(rows, numsPerPlay, localIntArray);
+            
+            // Update the global variables
+            intArray = localIntArray;
+            numOfRows = rows;
+            resultsArray = results;
+            
+            resolve(results);
+        } catch (error) {
+            reject(`Error processing array: ${error.message}`);
         }
-    }).then();
+    });
 }
 
 // This function is exported.
 // This function will call the other functions to create the resultsArray first and then create the json file with the results.
 function createJsonFile() {
-    wordsArrayPromise.then(() => {
-        createResultsArray(wordArray);
-        resultArrayJson = JSON.stringify(resultsArray);
+    // wordsArrayPromise.then(() => {
+    //     createResultsArray(wordArray);
+    //     resultArrayJson = JSON.stringify(resultsArray);
 
-        fs.writeFile("data.json", resultArrayJson, function (err) {
-            console.log(err ? 'Error :' + err : 'File created')
+    //     fs.writeFile("data.json", resultArrayJson, function (err) {
+    //         console.log(err ? 'Error :' + err : 'File created')
+    //     });
+    //     console.log(resultsArray.length);
+    // });
+    // return resultArrayJson;
+
+    return wordsArrayPromise
+        .then(() => createResultsArray(wordArray))
+        .then((results) => {
+            resultArrayJson = JSON.stringify(results);
+            
+            return new Promise((resolve, reject) => {
+                fs.writeFile("data.json", resultArrayJson, function (err) {
+                    if (err) {
+                        console.log('Error: ' + err);
+                        reject(err);
+                    } else {
+                        console.log('File created');
+                        console.log(results.length);
+                        resolve(resultArrayJson);
+                    }
+                });
+            });
+        })
+        .catch(err => {
+            console.error("Failed to create JSON file:", err);
+            throw err;
         });
-        console.log(resultsArray.length);
-    });
-    return resultArrayJson;
 }
 
 // The resultsArray variable is exported to be used in the calculations.js file.
