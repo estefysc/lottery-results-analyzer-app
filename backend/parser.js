@@ -31,7 +31,6 @@ function create2dArray(rows, columns, numArr) {
     return twoDimArray;
 }
 
-// todo: find something meaningful to use instead of the test variable.
 // This promise will get the text contained in the 'td' tag from the url, and then create the wordArray with the resultant text.
 let wordsArrayPromise = new Promise(function(resolve, reject) {
     let test = true;

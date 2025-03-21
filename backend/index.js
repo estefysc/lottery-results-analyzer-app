@@ -8,18 +8,35 @@ let evenOddData;
 
 // Obtains the data from the lottery website.
 let getNumberData = () => {
-    evenOddData = evenAndOddPercentageCalculator();
+    // evenOddData = evenAndOddPercentageCalculator();
+    if (!evenOddData) {
+        evenOddData = evenAndOddPercentageCalculator();
+    }
+    return evenOddData;
 }
 
 // Obtains the six most repeated numbers and its frequencies.
 let getMostRepeated = () => {
+    // return {
+    //     freqNums: getSixMostRepeatedNumbers(evenOddData.numbersMap) 
+    // };
     return {
-        freqNums: getSixMostRepeatedNumbers(evenOddData.numbersMap) 
+        freqNums: getSixMostRepeatedNumbers(getNumberData().numbersMap) 
     };
 }
 
 let getEvenOddData = () => {
+    // return evenOddData;
+    if (!evenOddData) {
+        evenOddData = evenAndOddPercentageCalculator();
+    }
     return evenOddData;
 }
 
-export {getMostRepeated, getNumberData, getEvenOddData};
+let getAllNumsData = () => {
+    return {
+        numbersMap: getNumberData().numbersMap
+    };
+}
+
+export {getMostRepeated, getNumberData, getEvenOddData, getAllNumsData};
