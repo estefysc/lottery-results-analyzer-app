@@ -46,6 +46,11 @@ function Navigation() {
                                         Evens and Odds
                                     </NavDropdown.Item>
                                 </LinkContainer>
+                                <LinkContainer to="allNums">
+                                    <NavDropdown.Item className="drp-item">
+                                        All Numbers
+                                    </NavDropdown.Item>
+                                </LinkContainer>
                                 {/*<NavDropdown.Item className="drp-item">*/}
                                 {/*    Something else here*/}
                                 {/*</NavDropdown.Item>*/}
