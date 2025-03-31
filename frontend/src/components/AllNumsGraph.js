@@ -1,5 +1,5 @@
 import React, {useEffect, useState}  from "react";
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import axios from "axios";
 import "./AllNumsGraph.css";
 
@@ -15,36 +15,13 @@ function AllNumsGraph() {
 
     useEffect(() => getData(), []);
 
-    const graphInfo = [
-        {
-            name: 'Zero Even Numbers',
-            percentage: `${Math.round(data.percentZeroEven * 10) / 10}`,
-        },
-        {
-            name: 'One Even Number',
-            percentage: `${Math.round(data.percentOneEven * 10) / 10}`,
-        },
-        {
-            name: 'Two Even Numbers',
-            percentage: `${Math.round(data.percentTwoEven * 10) / 10}`,
-        },
-        {
-            name: 'Three Even Numbers',
-            percentage: `${Math.round(data.percentThreeEven * 10) / 10}`,
-        },
-        {
-            name: 'Four Even Numbers',
-            percentage: `${Math.round(data.percentFourEven * 10) / 10}`,
-        },
-        {
-            name: 'Five Even Numbers',
-            percentage: `${Math.round(data.percentFiveEven * 10) / 10}`,
-        },
-        {
-            name: 'Six Even Numbers',
-            percentage: `${Math.round(data.percentSixEven * 10) / 10}`,
-        },
-    ];
+    const graphInfo = Array.from({ length: 53 }, (_, index) => {
+        const num = index + 1;
+        return {
+            name: num.toString(),
+            frequency: data && data.numbers ? data.numbers[num] || 0 : 0
+        };
+    });
 
     return (
         <div className="graphContainer">
@@ -60,12 +37,15 @@ function AllNumsGraph() {
                         bottom: 0,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="4 4" />
-                    <XAxis dataKey="name" stroke="#C5C6C7"/>
-                    <YAxis type="number" domain={[0, 50]} stroke="#C5C6C7"/>
+                    <XAxis 
+                        dataKey="name" 
+                        stroke="#C5C6C7"
+                        interval={0} // Force display of all labels
+                    />
+                    <YAxis type="number" domain={['auto', 'auto']} stroke="#C5C6C7"/>
                     <Tooltip />
                     <Legend align={"left"}/>
-                    <Line type="monotone" dataKey="percentage" stroke="#45A29E" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey="frequency" stroke="#FF8E71" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
         </div>

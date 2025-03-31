@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from "react";
-import PercentageGraph from "./PercentageGraph";
-import axios from "axios";
+import AllNumsGraph from "./AllNumsGraph";
 
 import "./AllNums.css";
 
 function AllNums() {
     return (
         <div>
-            <PercentageGraph />
+            <AllNumsGraph />
             <p className="graphInfo">
-                This will be the graph for all the numbers.
+                This graph shows the frequency of all numbers (1-53) in the Florida Lotto.
+                The x-axis represents each possible 
+                number, while the y-axis shows how many times that number has appeared in all draws. 
+                Hover over data points to see the exact values.
             </p>
         </div>
     )
